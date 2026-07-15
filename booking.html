@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js')</script>
+  <title>Booking og kommende kurs | Trafikkskolesenteret</title>
+  <meta name="description" content="Book kjøretime og meld deg på kurs hos Trafikkskolesenteret i Tynset. Åpne bookingkalenderen og logg inn på elevsiden via TABS.">
+  <link rel="canonical" href="https://trafikkskolesenteret.no/booking.html">
+  <meta name="theme-color" content="#0C1E2A">
+  <link rel="icon" type="image/png" href="img/favicon.png?v=5">
+  <link rel="apple-touch-icon" href="img/favicon.png?v=5">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Trafikkskolesenteret">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:title" content="Booking og kommende kurs | Trafikkskolesenteret">
+  <meta property="og:description" content="Book kjøretime og meld deg på kurs hos Trafikkskolesenteret i Tynset.">
+  <meta property="og:url" content="https://trafikkskolesenteret.no/booking.html">
+  <meta property="og:image" content="https://trafikkskolesenteret.no/img/road.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Booking og kommende kurs | Trafikkskolesenteret">
+  <meta name="twitter:description" content="Book kjøretime og meld deg på kurs hos Trafikkskolesenteret i Tynset.">
+  <meta name="twitter:image" content="https://trafikkskolesenteret.no/img/road.jpg">
+  <link rel="stylesheet" href="css/styles.css?v=43">
+  <style>
+    .book-grid { display: grid; gap: clamp(1.1rem, 2vw, 1.6rem); }
+    @media (min-width: 760px) { .book-grid { grid-template-columns: 1fr 1fr; } }
+    .book-card { display: flex; flex-direction: column; padding: clamp(1.7rem, 3vw, 2.2rem); }
+    .book-card__tag { display: inline-flex; align-self: flex-start; font-family: var(--font-display); font-weight: 700; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); background: rgba(8,117,160,.1); padding: .36rem .85rem; border-radius: 999px; margin-bottom: 1rem; }
+    .book-card h3 { font-size: 1.4rem; margin-bottom: .5rem; }
+    .book-card p { font-size: .96rem; margin-bottom: 1.2rem; }
+    .book-card .btn-row { margin-top: auto; }
+    .steps3 { display: grid; gap: clamp(1rem, 2vw, 1.4rem); counter-reset: s; }
+    @media (min-width: 760px) { .steps3 { grid-template-columns: repeat(3, 1fr); } }
+    .step3 { padding: 1.6rem 1.7rem; }
+    .step3 .n { font-family: var(--font-display); font-weight: 700; font-size: 2.4rem; line-height: 1; color: var(--accent-bright); }
+    .step3 h3 { margin: .7rem 0 .4rem; font-size: 1.15rem; }
+    .step3 p { font-size: .95rem; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hjem","item":"https://trafikkskolesenteret.no/"},{"@type":"ListItem","position":2,"name":"Booking","item":"https://trafikkskolesenteret.no/booking.html"}]}</script>
+</head>
+<body>
+  <a href="#hovedinnhold" class="skip-link">Hopp til innhold</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="index.html" aria-label="Trafikkskolesenteret, forside"><img decoding="async" class="brand__logo" src="img/logo.png?v=1" alt="Trafikkskolesenteret"></a>
+      <nav class="nav__links" aria-label="Hovedmeny">
+        <a href="index.html">Hjem</a>
+        <div class="has-dd">
+          <button class="dd__btn" aria-haspopup="true" aria-expanded="false">Opplæring
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dd__panel" role="menu">
+            <a href="klasse-b.html" role="menuitem"><span class="dd__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13M5 13h14v4H5z"/><circle cx="8" cy="17" r="1.4"/><circle cx="16" cy="17" r="1.4"/></svg></span><span><b>Klasse B – Bil</b><span>Manuell eller automat</span></span></a>
+            <a href="klasse-a-mc.html" role="menuitem"><span class="dd__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="16" r="3.2"/><circle cx="19" cy="16" r="3.2"/><path d="M8.2 16h4.3l3-5.5H14l-2-2H8"/><path d="M15.5 10.5 17.5 16"/></svg></span><span><b>Klasse A – Motorsykkel</b><span>Lett, mellomtung og tung</span></span></a>
+            <a href="klasse-t.html" role="menuitem"><span class="dd__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="16" r="4"/><circle cx="18" cy="17" r="3"/><path d="M7 12V6h4l2 6M11 16h4M15 17V8h5"/></svg></span><span><b>Klasse T – Traktor</b><span>Traktor og redskap</span></span></a>
+            <a href="klasse-be.html" role="menuitem"><span class="dd__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h9v6H3zM12 11h6l3 3v0h-9z"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg></span><span><b>Klasse BE</b><span>Bil med tilhenger</span></span></a>
+            <a href="klasse-am.html" role="menuitem"><span class="dd__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="16" r="3"/><circle cx="18.5" cy="16" r="3"/><path d="M8.5 16h7l2-6h2M17.5 10 16 6h-3M5.5 16 8 11h6"/></svg></span><span><b>Klasse AM – Moped</b><span>Moped fra 16 år</span></span></a>
+            <a href="trafikalt-grunnkurs.html" role="menuitem"><span class="dd__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span><b>Trafikalt grunnkurs</b><span>Obligatorisk førstesteg</span></span></a>
+          </div>
+        </div>
+        <a href="priser.html">Priser</a>
+        <a href="booking.html" aria-current="page">Booking</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <div class="nav__cta">
+        <a class="nav__login" href="https://tabs.no/start" target="_blank" rel="noopener" aria-label="Elevinnlogging (åpner nytt vindu)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17 15 12 10 7M15 12H3"/></svg>
+          Elevinnlogging
+        </a>
+        <a class="btn btn--primary" href="kontakt.html">Meld deg på
+          <span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </div>
+      <button class="nav__burger" aria-label="Åpne meny" aria-expanded="false" aria-controls="mobilmeny"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobilmeny">
+    <a class="m-link" href="index.html">Hjem</a>
+    <span class="m-link" style="cursor:default;opacity:.7">Opplæring</span>
+    <div class="m-sub">
+      <a href="klasse-b.html">Klasse B – Bil</a>
+      <a href="klasse-a-mc.html">Klasse A – MC</a>
+      <a href="klasse-t.html">Klasse T – Traktor</a>
+      <a href="klasse-be.html">Klasse BE – Tilhenger</a>
+      <a href="klasse-am.html">Klasse AM – Moped</a>
+      <a href="trafikalt-grunnkurs.html">Trafikalt grunnkurs</a>
+    </div>
+    <a class="m-link" href="priser.html">Priser</a>
+    <a class="m-link" href="booking.html">Booking</a>
+    <a class="m-link" href="om-oss.html">Om oss</a>
+    <a class="m-link" href="kontakt.html">Kontakt</a>
+    <div class="mobile-menu__foot">
+      <a class="btn btn--ghost btn--block" href="https://tabs.no/start" target="_blank" rel="noopener">Elevinnlogging</a>
+      <a class="btn btn--primary btn--block" href="kontakt.html">Meld deg på</a>
+    </div>
+  </div>
+
+  <main id="hovedinnhold">
+
+    <!-- ===================== SUBHERO ===================== -->
+    <section class="subhero">
+      <div class="subhero__bg" aria-hidden="true"><img decoding="async" src="img/tynset-vinter.jpg" alt=""></div>
+      <div class="subhero__scrim" aria-hidden="true"></div>
+      <span data-nav-sentinel style="position:absolute;top:60px;height:1px;width:1px"></span>
+      <div class="container">
+        <div class="crumbs"><a href="index.html">Hjem</a><span>/</span> Booking</div>
+        <span class="eyebrow">Booking</span>
+        <h1>Book kjøretime og kurs</h1>
+        <p class="lead">Du booker kjøretimer og melder deg på kurs i bookingsystemet vårt. Åpne bookingkalenderen, så ser du ledige timer og kommende kurs i Tynset.</p>
+      </div>
+    </section>
+
+    <!-- ===================== SLIK GJØR DU ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><h2>Slik kommer du i gang</h2><p class="lead">Tre enkle steg fra påmelding til første kjøretime.</p></div>
+        <div class="steps3 reveal">
+          <div class="card step3"><span class="n">1</span><h3>Meld deg på</h3><p>Ta kontakt eller meld deg på, så registrerer vi deg som elev og finner riktig opplegg.</p></div>
+          <div class="card step3"><span class="n">2</span><h3>Logg inn</h3><p>Du får tilgang til elevsiden i TABS, der du følger din egen progresjon.</p></div>
+          <div class="card step3"><span class="n">3</span><h3>Book time</h3><p>Velg ledige kjøretimer og kurs i bookingkalenderen vår.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KOMMENDE KURS ===================== -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Kommende kurs</span>
+          <h2>Kursoversikt</h2>
+          <p class="measure" style="margin:.9rem auto 0">Se kommende trafikalt grunnkurs, førstehjelp, mørkekjøring og sikkerhetskontroll i Tynset. Du trenger ikke velge dato – meld deg rett på kurset du vil ha.</p>
+        </div>
+        <div class="reveal" data-kurs-list="full"><p class="ko-empty">Laster kommende kurs …</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== KALENDER ===================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Bookingkalender</span>
+          <h2>Åpne bookingkalenderen</h2>
+          <p class="measure" style="margin:.9rem auto 0">Her ser du ledige kjøretimer og kommende kurs. Booking åpnes i et nytt vindu.</p>
+        </div>
+        <div class="book-grid reveal" style="grid-template-columns:1fr;max-width:640px;margin-inline:auto">
+          <article class="card book-card">
+            <span class="book-card__tag">Tynset</span>
+            <h3>Bookingkalender</h3>
+            <p class="muted">Parkveien 14A, 2500 Tynset<br>Teori og kurs holder vi i egne lokaler i Parkveien 14A</p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="https://tabs.no/start" target="_blank" rel="noopener">Book i TABS<span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+            </div>
+          </article>
+        </div>
+        <div class="center reveal" style="margin-top:2rem">
+          <p class="muted" style="margin-bottom:1rem">Allerede elev?</p>
+          <a class="btn btn--ghost" href="https://tabs.no/start" target="_blank" rel="noopener">Logg inn på elevsiden<span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17 15 12 10 7M15 12H3"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="cta-band section--tight">
+      <div class="cta-band__bg" aria-hidden="true"><img decoding="async" src="img/tynset-sommer.jpg" alt=""></div>
+      <div class="cta-band__scrim" aria-hidden="true"></div>
+      <div class="container center">
+        <h2>Ikke elev ennå?</h2>
+        <p class="measure" style="margin:.8rem auto 1.6rem">Meld deg på, så registrerer vi deg og hjelper deg i gang med booking.</p>
+        <div class="btn-row" style="justify-content:center">
+          <a class="btn btn--primary btn--lg" href="kontakt.html">Meld deg på<span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+          <a class="btn btn--glass btn--lg" href="priser.html">Se priser</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Trafikkskolesenteret, forside"><img decoding="async" class="brand__logo" src="img/logo.png?v=1" alt="Trafikkskolesenteret"></a>
+          <p class="footer__tagline">Sikker og effektiv opplæring</p>
+          <p class="footer__about">Trafikkskolesenteret i Tynset og på Røros. Bil, motorsykkel, traktor og moped – vi har tatt distriktet trygt til førerkortet i snart 40 år.</p>
+        </div>
+        <div>
+          <h4>Opplæring</h4>
+          <ul>
+            <li><a href="klasse-b.html">Klasse B – Bil</a></li>
+            <li><a href="klasse-a-mc.html">Klasse A – Motorsykkel</a></li>
+            <li><a href="klasse-t.html">Klasse T – Traktor</a></li>
+            <li><a href="klasse-be.html">Klasse BE – Tilhenger</a></li>
+            <li><a href="klasse-am.html">Klasse AM – Moped</a></li>
+            <li><a href="trafikalt-grunnkurs.html">Trafikalt grunnkurs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul class="footer__contact">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2 1.5a11 11 0 0 0 5 5L16 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><a href="tel:+4790744745">90 74 47 45</a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:steinjronningen@gmail.com">steinjronningen@gmail.com</a></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span style="line-height:1.6">Parkveien 14A<br>2500 Tynset</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17 15 12 10 7M15 12H3"/></svg><a href="https://tabs.no/start" target="_blank" rel="noopener">Elevinnlogging</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <span>© <span data-year>2026</span> Trafikkskolesenteret · Tynset</span>
+        <a href="vilkar.html">Vilkår</a>
+        <span>Levert av Larsen Digital Solutions</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mbar">
+    <a class="btn btn--ghost" href="priser.html">Se priser</a>
+    <a class="btn btn--primary" href="kontakt.html">Meld deg på</a>
+  </div>
+
+  <script src="js/main.js?v=13" defer></script>
+  <script src="data/kurs.js?v=1" defer></script>
+  <script src="js/kommende-kurs.js?v=2" defer></script>
+</body>
+</html>
