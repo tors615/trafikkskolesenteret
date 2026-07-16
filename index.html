@@ -32,7 +32,7 @@
     .explorer__list { display: flex; gap: .55rem; overflow-x: auto; padding: .1rem .1rem .4rem; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .explorer__list::-webkit-scrollbar { display: none; }
     @media (min-width: 900px) { .explorer__list { flex-direction: column; overflow: visible; gap: .5rem; padding: 0; } }
-    .explorer__item { flex: 0 0 auto; display: flex; align-items: center; gap: .85rem; text-align: left; padding: .85rem 1rem; border-radius: 15px; border: 1px solid var(--hairline); background: var(--surface); cursor: pointer; font: inherit; transition: border-color .3s var(--ease), background-color .35s var(--ease), box-shadow .35s var(--ease); }
+    .explorer__item { flex: 0 0 auto; display: flex; align-items: center; gap: .85rem; text-align: left; text-decoration: none; color: inherit; padding: .85rem 1rem; border-radius: 15px; border: 1px solid var(--hairline); background: var(--surface); cursor: pointer; font: inherit; transition: border-color .3s var(--ease), background-color .35s var(--ease), box-shadow .35s var(--ease); }
     @media (min-width: 900px) { .explorer__item { width: 100%; } }
     .explorer__item:hover { border-color: rgba(196,38,44,.45); }
     .explorer__item.is-active { background: var(--bg-deep); border-color: var(--bg-deep); box-shadow: 0 12px 30px rgba(8,22,32,.2); }
@@ -54,6 +54,9 @@
     .feat__media { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
     .feat__media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.05); transition: transform 7s linear; }
     .feat.is-active .feat__media img { transform: scale(1.13); }
+    /* Klasse B: zoom inn på bilene (ikke traktoren) i bilpark-bildet */
+    .feat[data-cls="b"] .feat__media img { transform: scale(1.42); transform-origin: 27% 60%; }
+    .feat[data-cls="b"].is-active .feat__media img { transform: scale(1.48); transform-origin: 27% 60%; }
     .feat::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(6,18,26,.32) 0%, rgba(6,18,26,.18) 38%, rgba(6,18,26,.74) 76%, rgba(6,18,26,.96) 100%); }
     .feat__code { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.6rem, 5.5vw, 4.4rem); line-height: .82; letter-spacing: -.05em; text-shadow: 0 2px 26px rgba(0,0,0,.45); }
     .feat__body { margin-top: auto; padding-top: 1.4rem; }
@@ -184,18 +187,18 @@
           <p class="measure" style="margin:.9rem auto 0">Vi tar deg hele veien – enten det er første bil, motorsykkel til sommeren eller traktor til gården. Alt på ett sted, med lærere som kjenner distriktet.</p>
         </div>
         <div class="explorer reveal" data-explorer>
-          <div class="explorer__list" role="tablist" aria-label="Velg klasse">
-            <button type="button" class="explorer__item is-active" data-cls="b" role="tab" aria-selected="true"><span class="explorer__code">B</span><span class="explorer__txt"><span class="explorer__name">Bil</span><span class="explorer__sub">Automat & manuell</span></span><span class="explorer__arrow" aria-hidden="true">→</span></button>
-            <button type="button" class="explorer__item" data-cls="a" role="tab" aria-selected="false"><span class="explorer__code">A</span><span class="explorer__txt"><span class="explorer__name">Motorsykkel</span><span class="explorer__sub">A1 · A2 · A</span></span><span class="explorer__arrow" aria-hidden="true">→</span></button>
-            <button type="button" class="explorer__item" data-cls="t" role="tab" aria-selected="false"><span class="explorer__code">T</span><span class="explorer__txt"><span class="explorer__name">Traktor</span><span class="explorer__sub">Med og uten tilhenger</span></span><span class="explorer__arrow" aria-hidden="true">→</span></button>
-            <button type="button" class="explorer__item" data-cls="be" role="tab" aria-selected="false"><span class="explorer__code">BE</span><span class="explorer__txt"><span class="explorer__name">Bil med tilhenger</span><span class="explorer__sub">BE og B96</span></span><span class="explorer__arrow" aria-hidden="true">→</span></button>
-            <button type="button" class="explorer__item" data-cls="am" role="tab" aria-selected="false"><span class="explorer__code">AM</span><span class="explorer__txt"><span class="explorer__name">Moped</span><span class="explorer__sub">AM146 · AM147</span></span><span class="explorer__arrow" aria-hidden="true">→</span></button>
-            <button type="button" class="explorer__item" data-cls="tgk" role="tab" aria-selected="false"><span class="explorer__code">TGK</span><span class="explorer__txt"><span class="explorer__name">Trafikalt grunnkurs</span><span class="explorer__sub">Obligatorisk førstesteg</span></span><span class="explorer__arrow" aria-hidden="true">→</span></button>
+          <div class="explorer__list" aria-label="Velg klasse">
+            <a class="explorer__item is-active" data-cls="b" href="klasse-b.html"><span class="explorer__code">B</span><span class="explorer__txt"><span class="explorer__name">Bil</span><span class="explorer__sub">Automat & manuell</span></span><span class="explorer__arrow" aria-hidden="true">→</span></a>
+            <a class="explorer__item" data-cls="a" href="klasse-a-mc.html"><span class="explorer__code">A</span><span class="explorer__txt"><span class="explorer__name">Motorsykkel</span><span class="explorer__sub">A1 · A2 · A</span></span><span class="explorer__arrow" aria-hidden="true">→</span></a>
+            <a class="explorer__item" data-cls="t" href="klasse-t.html"><span class="explorer__code">T</span><span class="explorer__txt"><span class="explorer__name">Traktor</span><span class="explorer__sub">Med og uten tilhenger</span></span><span class="explorer__arrow" aria-hidden="true">→</span></a>
+            <a class="explorer__item" data-cls="be" href="klasse-be.html"><span class="explorer__code">BE</span><span class="explorer__txt"><span class="explorer__name">Bil med tilhenger</span><span class="explorer__sub">BE og B96</span></span><span class="explorer__arrow" aria-hidden="true">→</span></a>
+            <a class="explorer__item" data-cls="am" href="klasse-am.html"><span class="explorer__code">AM</span><span class="explorer__txt"><span class="explorer__name">Moped</span><span class="explorer__sub">AM146 · AM147</span></span><span class="explorer__arrow" aria-hidden="true">→</span></a>
+            <a class="explorer__item" data-cls="tgk" href="trafikalt-grunnkurs.html"><span class="explorer__code">TGK</span><span class="explorer__txt"><span class="explorer__name">Trafikalt grunnkurs</span><span class="explorer__sub">Obligatorisk førstesteg</span></span><span class="explorer__arrow" aria-hidden="true">→</span></a>
           </div>
 
           <div class="explorer__feature">
             <article class="feat is-active" data-cls="b">
-              <div class="feat__media"><img decoding="async" src="img/tss-biler.png" alt="Trafikkskolesenterets biler" loading="lazy" style="object-position:35% center"></div>
+              <div class="feat__media"><img decoding="async" src="img/tss-biler.png" alt="Trafikkskolesenterets biler" loading="lazy"></div>
               <span class="feat__code">B</span>
               <div class="feat__body">
                 <h3>Bil – automat eller manuell</h3>
@@ -390,14 +393,13 @@
     var items = Array.prototype.slice.call(root.querySelectorAll('.explorer__item'));
     var feats = Array.prototype.slice.call(root.querySelectorAll('.feat'));
     function activate(cls) {
-      items.forEach(function (i) { var on = i.getAttribute('data-cls') === cls; i.classList.toggle('is-active', on); i.setAttribute('aria-selected', on ? 'true' : 'false'); });
+      items.forEach(function (i) { i.classList.toggle('is-active', i.getAttribute('data-cls') === cls); });
       feats.forEach(function (f) { f.classList.toggle('is-active', f.getAttribute('data-cls') === cls); });
     }
     items.forEach(function (i) {
       var cls = i.getAttribute('data-cls');
       i.addEventListener('mouseenter', function () { activate(cls); });
       i.addEventListener('focus', function () { activate(cls); });
-      i.addEventListener('click', function () { activate(cls); });
     });
   })();
   </script>
