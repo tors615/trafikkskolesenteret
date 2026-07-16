@@ -8,7 +8,7 @@ window.JD_KURS = {
   "avdelinger": {
     "tynset": {
       "navn": "Tynset",
-      "sted": "Parkveien 14A, 2500 Tynset",
+      "sted": "Parkveien 14, 2500 Tynset",
       "kalender": "https://tabs.no/start",
       "kursoversikt": "https://tabs.no/start"
     }
