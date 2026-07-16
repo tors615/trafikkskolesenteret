@@ -26,7 +26,7 @@
     .book-grid { display: grid; gap: clamp(1.1rem, 2vw, 1.6rem); }
     @media (min-width: 760px) { .book-grid { grid-template-columns: 1fr 1fr; } }
     .book-card { display: flex; flex-direction: column; padding: clamp(1.7rem, 3vw, 2.2rem); }
-    .book-card__tag { display: inline-flex; align-self: flex-start; font-family: var(--font-display); font-weight: 700; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); background: rgba(8,117,160,.1); padding: .36rem .85rem; border-radius: 999px; margin-bottom: 1rem; }
+    .book-card__tag { display: inline-flex; align-self: flex-start; font-family: var(--font-display); font-weight: 700; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); background: rgba(196,38,44,.1); padding: .36rem .85rem; border-radius: 999px; margin-bottom: 1rem; }
     .book-card h3 { font-size: 1.4rem; margin-bottom: .5rem; }
     .book-card p { font-size: .96rem; margin-bottom: 1.2rem; }
     .book-card .btn-row { margin-top: auto; }
@@ -115,30 +115,6 @@
       </div>
     </section>
 
-    <!-- ===================== SLIK GJØR DU ===================== -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal"><h2>Slik kommer du i gang</h2><p class="lead">Tre enkle steg fra påmelding til første kjøretime.</p></div>
-        <div class="steps3 reveal">
-          <div class="card step3"><span class="n">1</span><h3>Meld deg på</h3><p>Ta kontakt eller meld deg på, så registrerer vi deg som elev og finner riktig opplegg.</p></div>
-          <div class="card step3"><span class="n">2</span><h3>Logg inn</h3><p>Du får tilgang til elevsiden i TABS, der du følger din egen progresjon.</p></div>
-          <div class="card step3"><span class="n">3</span><h3>Book time</h3><p>Velg ledige kjøretimer og kurs i bookingkalenderen vår.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== KOMMENDE KURS ===================== -->
-    <section class="section section--soft">
-      <div class="container">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow eyebrow--center">Kommende kurs</span>
-          <h2>Kursoversikt</h2>
-          <p class="measure" style="margin:.9rem auto 0">Se kommende trafikalt grunnkurs, førstehjelp, mørkekjøring og sikkerhetskontroll i Tynset. Du trenger ikke velge dato – meld deg rett på kurset du vil ha.</p>
-        </div>
-        <div class="reveal" data-kurs-list="full"><p class="ko-empty">Laster kommende kurs …</p></div>
-      </div>
-    </section>
-
     <!-- ===================== KALENDER ===================== -->
     <section class="section">
       <div class="container">
@@ -161,6 +137,18 @@
           <p class="muted" style="margin-bottom:1rem">Allerede elev?</p>
           <a class="btn btn--ghost" href="https://tabs.no/start" target="_blank" rel="noopener">Logg inn på elevsiden<span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17 15 12 10 7M15 12H3"/></svg></span></a>
         </div>
+      </div>
+    </section>
+
+    <!-- ===================== KOMMENDE KURS ===================== -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow eyebrow--center">Kommende kurs</span>
+          <h2>Kursoversikt</h2>
+          <p class="measure" style="margin:.9rem auto 0">Se kommende trafikalt grunnkurs, førstehjelp, mørkekjøring og sikkerhetskontroll i Tynset. Du trenger ikke velge dato – meld deg rett på kurset du vil ha.</p>
+        </div>
+        <div class="reveal" data-kurs-list="full"><p class="ko-empty">Laster kommende kurs …</p></div>
       </div>
     </section>
 
