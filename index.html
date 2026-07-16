@@ -54,9 +54,6 @@
     .feat__media { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
     .feat__media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.05); transition: transform 7s linear; }
     .feat.is-active .feat__media img { transform: scale(1.13); }
-    /* Klasse B: zoom inn på bilene (ikke traktoren) i bilpark-bildet */
-    .feat[data-cls="b"] .feat__media img { transform: scale(1.42); transform-origin: 27% 60%; }
-    .feat[data-cls="b"].is-active .feat__media img { transform: scale(1.48); transform-origin: 27% 60%; }
     .feat::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(6,18,26,.32) 0%, rgba(6,18,26,.18) 38%, rgba(6,18,26,.74) 76%, rgba(6,18,26,.96) 100%); }
     .feat__code { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.6rem, 5.5vw, 4.4rem); line-height: .82; letter-spacing: -.05em; text-shadow: 0 2px 26px rgba(0,0,0,.45); }
     .feat__body { margin-top: auto; padding-top: 1.4rem; }
@@ -198,7 +195,7 @@
 
           <div class="explorer__feature">
             <article class="feat is-active" data-cls="b">
-              <div class="feat__media"><img decoding="async" src="img/tss-biler.png" alt="Trafikkskolesenterets biler" loading="lazy"></div>
+              <div class="feat__media"><img decoding="async" src="img/tss-biler.png" alt="Trafikkskolesenterets biler – Audi og branded VW Golf" loading="lazy" style="object-position:58% center"></div>
               <span class="feat__code">B</span>
               <div class="feat__body">
                 <h3>Bil – automat eller manuell</h3>
