@@ -309,7 +309,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg><span><b>Betaling</b>Kjøretimer og kurs betales fortløpende. For større opplegg avtaler vi betaling på forhånd.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span><b>Gebyrer i tillegg</b>Baneleie og gebyrer hos Statens vegvesen kommer i tillegg til prisene våre.</span></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Antall kjøretimer</b>Hvor mange kjøretimer du trenger tilpasses ditt nivå og hvor mye du har kjørt fra før.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg><span><b>Avbestilling</b>Gi oss beskjed i god tid hvis du må endre en time, så finner vi en ny som passer.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg><span><b>Avbestilling</b>Gi beskjed i god tid hvis du må endre en time. Timer som ikke avbestilles i tide, eller som du ikke møter til, må betales – se <a href="vilkar.html">vilkår</a>.</span></li>
           </ul>
         </div>
       </div>
@@ -389,7 +389,7 @@
         { n: 'Leie av bil til førerprøve', p: 2600, on: 1 },
         { n: 'Trafikalt grunnkurs (inkl. førstehjelp)', p: 3000, s: 'hvis du ikke har førerkort fra før' }
       ] },
-      mc: { label: 'Motorsykkel', time: 1260, def: 10, min: 4, max: 30, note: 'Eksemplet viser mellomtung (A2). Sikkerhetskurs på vei varierer for lett (A1) og tung (A).', items: [
+      mc: { label: 'Motorsykkel', time: 1260, def: 10, min: 4, max: 30, note: 'Eksemplet viser mellomtung (A2). Sikkerhetskurs på vei: A1 og A2 kr 6 300, A kr 10 080. For lett motorsykkel (A1) kommer sikkerhetskurs i trafikk (kr 5 040) i tillegg.', items: [
         { n: 'Grunnkurs MC', p: 1750, ob: 1 },
         { n: 'Kurs i presis kjøreteknikk (inkl. baneleie, Berkåk)', p: 7350, ob: 1 },
         { n: 'Kjøring til/fra bane', p: 5040, ob: 1 },
@@ -454,16 +454,16 @@
     }
 
     function compute() {
-      var c = CALC[cur], timeTotal = c.notime ? 0 : count * c.time, obTotal = 0, valTotal = 0, valCount = 0;
+      var c = CALC[cur], timeTotal = c.notime ? 0 : count * c.time, obTotal = 0, valTotal = 0, valRows = [];
       Array.prototype.forEach.call(itemsEl.querySelectorAll('input'), function (inp) {
         if (!inp.checked) return; var it = c.items[+inp.getAttribute('data-i')];
-        if (it.ob) obTotal += it.p; else { valTotal += it.p; valCount++; }
+        if (it.ob) obTotal += it.p; else { valTotal += it.p; valRows.push([it.n, kr(it.p)]); }
       });
       totalEl.textContent = kr(timeTotal + obTotal + valTotal);
       var rows = [];
       if (!c.notime) rows.push(['Kjøretimer (' + count + ' stk)', kr(timeTotal)]);
       if (obTotal) rows.push(['Obligatorisk opplæring', kr(obTotal)]);
-      if (valTotal) rows.push(['Valgfritt (' + valCount + ' post' + (valCount === 1 ? '' : 'er') + ')', kr(valTotal)]);
+      valRows.forEach(function (r) { rows.push(r); });
       breakEl.innerHTML = rows.map(function (r) { return '<li><span>' + r[0] + '</span><b class="est__amt">' + r[1] + ' kr</b></li>'; }).join('');
     }
 
