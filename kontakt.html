@@ -118,8 +118,8 @@
             <span class="eyebrow">Kontaktinfo</span>
             <h2 style="margin:.6rem 0 1.3rem">Vi hjelper deg gjerne</h2>
             <ul class="info-list">
-              <li><span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2 1.5a11 11 0 0 0 5 5L16 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span><span><b>Telefon</b><a href="tel:+4790744745">90 74 47 45</a></span></li>
-              <li><span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><b>E-post</b><a href="mailto:steinjronningen@gmail.com">steinjronningen@gmail.com</a></span></li>
+              <li><span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2 1.5a11 11 0 0 0 5 5L16 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span><span><b>Telefon / SMS</b><a href="tel:+4790744745">90 74 47 45</a> <span style="color:var(--ink-3)">·</span> <a href="tel:+4790917542">90 91 75 42</a></span></li>
+              <li><span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><b>E-post</b><a href="mailto:steinjronningen@gmail.com" style="display:block">steinjronningen@gmail.com</a><a href="mailto:chrisoveronningen@gmail.com" style="display:block;margin-top:.15rem">chrisoveronningen@gmail.com</a></span></li>
               <li><span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>Adresse</b><span style="line-height:1.5">Parkveien 14<br>2500 Tynset</span></span></li>
             </ul>
             <p class="muted" style="font-size:.9rem;line-height:1.6;margin:1.3rem 0 0">Ta kontakt for avtale – vi har ikke faste åpningstider på telefon. Vi har også opplæring på Røros.</p>
@@ -127,13 +127,15 @@
             <div class="kc-teachers">
               <div class="kc-teacher">
                 <b>Stein Jarle Rønningen</b>
-                <span>Trafikklærer · Innehaver</span>
+                <span>Trafikklærer</span>
                 <a href="tel:+4790744745">90 74 47 45</a>
+                <a href="mailto:steinjronningen@gmail.com" style="font-size:.8rem">steinjronningen@gmail.com</a>
               </div>
               <div class="kc-teacher">
                 <b>Chris Ove Rønningen</b>
                 <span>Trafikklærer</span>
                 <a href="tel:+4790917542">90 91 75 42</a>
+                <a href="mailto:chrisoveronningen@gmail.com" style="font-size:.8rem">chrisoveronningen@gmail.com</a>
               </div>
             </div>
           </div>
@@ -143,7 +145,7 @@
             <div class="bezel__inner">
               <span class="eyebrow">Meld deg på</span>
               <h2 style="margin:.7rem 0 .4rem">Send oss en melding</h2>
-              <p class="muted" style="margin-bottom:1.4rem">Fyll ut, så tar vi kontakt for å avtale oppstart. Det er helt uforpliktende.</p>
+              <p class="muted" style="margin-bottom:1.4rem">Her booker du kjøretimer og kurs: fyll ut skjemaet, eller ta kontakt på e-post eller SMS – så setter vi opp timene for deg. Du booker ikke selv, og det er helt uforpliktende.</p>
               <!-- TODO: koble skjema til ekte endepunkt (f.eks. Web3Forms) -->
               <form class="form" data-lead-form novalidate>
                 <div class="field--row">
@@ -154,7 +156,7 @@
                 <div class="field"><label for="klasse">Hva vil du ta?</label><select id="klasse" name="klasse"><option>Klasse B – bil (automat)</option><option>Klasse B – bil (manuell)</option><option>Klasse A – motorsykkel</option><option>Klasse T – traktor</option><option>Klasse BE – tilhenger</option><option>Moped (klasse AM)</option><option>Trafikalt grunnkurs</option><option>Annet / usikker</option></select></div>
                 <div class="field"><label for="melding">Melding</label><textarea id="melding" name="melding" placeholder="Skriv gjerne litt om hva du lurer på"></textarea></div>
                 <button class="btn btn--primary btn--lg" type="submit">Send påmelding<span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></button>
-                <p class="form__note">Du kan også ringe oss direkte på <a href="tel:+4790744745">90 74 47 45</a>.</p>
+                <p class="form__note">Du kan også ringe eller sende SMS til <a href="tel:+4790744745">90 74 47 45</a> eller <a href="tel:+4790917542">90 91 75 42</a>.</p>
                 <p class="form__status" aria-live="polite"></p>
               </form>
             </div>
