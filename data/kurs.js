@@ -1,16 +1,14 @@
 /* Kommende kurs for Trafikkskolesenteret – lastes som vanlig <script> slik at
    det fungerer både lokalt (file://) og på alle hoster, uten fetch/CORS.
-   Legg inn kurs i "kurs"-lista under for å vise dem på forsiden og booking-siden.
+   Legg inn kurs i "kurs"-lista under for å vise dem på forsiden og kurs-seksjonene.
    Tom liste = «Ingen kurs lagt ut akkurat nå»-melding vises automatisk.
-   Booking/påmelding: https://tabs.no/start */
+   Påmelding skjer via kontaktskjema/SMS – elevene booker ikke selv. */
 window.JD_KURS = {
   "_oppdatert": "2026-07-15",
   "avdelinger": {
     "tynset": {
       "navn": "Tynset",
-      "sted": "Parkveien 14, 2500 Tynset",
-      "kalender": "https://tabs.no/start",
-      "kursoversikt": "https://tabs.no/start"
+      "sted": "Parkveien 14, 2500 Tynset"
     }
   },
   "kurs": [

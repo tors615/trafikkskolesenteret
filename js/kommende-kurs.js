@@ -24,7 +24,7 @@
       .then(function (r) { return r.json(); })
       .then(init)
       .catch(function () {
-        hosts.forEach(function (h) { h.innerHTML = '<p class="ko-empty">Kursoversikten er midlertidig utilgjengelig. <a href="booking.html">Gå til booking</a>.</p>'; });
+        hosts.forEach(function (h) { h.innerHTML = '<p class="ko-empty">Kursoversikten er midlertidig utilgjengelig. <a href="kontakt.html">Ta kontakt</a>, så hjelper vi deg.</p>'; });
       });
   }
 
@@ -63,7 +63,7 @@
         '<p class="ko-meta">' + tid + ' · ' + esc(x.avd.navn) + '</p>' +
         '<p class="ko-meta ko-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>' + esc(x.avd.sted) + '</p>' +
         '<div class="ko-foot"><span class="ko-price">' + kr(k.pris) + '</span><span class="ko-left">' + spots(k.plasser) + '</span>' +
-          '<a class="btn btn--primary btn--sm" href="' + x.avd.kursoversikt + '" target="_blank" rel="noopener">Påmelding' +
+          '<a class="btn btn--primary btn--sm" href="kontakt.html">Meld deg på' +
           '<span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>' +
         '</div>' +
       '</div></article>';
